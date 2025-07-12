@@ -1,24 +1,20 @@
-# 🧑‍💼 Human Resource Management System (HRMS)
+# Human Resource Management System (HRMS)
 
-We are building a **Human Resource Management System (HRMS)** using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js) under the **internship program at UptoSkills**.
+A web-based HRMS platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js) as part of the UptoSkills internship.
+
+🔗 **Live:** [https://hrms-upto-skills.vercel.app](https://hrms-upto-skills.vercel.app)
 
 ## 🚀 Tech Stack
+- MongoDB
+- Express.js
+- React.js
+- Node.js
 
-- **MongoDB**
-- **Express.js**
-- **React.js**
-- **Node.js**
+## 📌 Goal
+To simplify employee management, attendance, and payroll through a scalable and user-friendly interface.
 
-## 📌 Project Goal
-
-To create a scalable, user-friendly, and efficient HRMS platform that simplifies employee management, attendance, payroll, and more.
-
----
-
-🔧 Work in progress...
-
----
+## 🛠️ Status
+**In Progress**
 
 ## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
+MIT License
