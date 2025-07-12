@@ -2,7 +2,7 @@
 
 A web-based HRMS platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js) as part of the UptoSkills internship.
 
-🔗 **Live:** [https://hrms-upto-skills.vercel.app](https://hrms-upto-skills.vercel.app)
+🔗 **Live:** [Preview](https://hrms-upto-skills.vercel.app)
 
 ## 🚀 Tech Stack
 - MongoDB
