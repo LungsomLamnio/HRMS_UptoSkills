@@ -18,44 +18,62 @@ export default function SideBar() {
   return (
     <div
       className="sidebar d-flex flex-column text-white vh-100 p-3"
-      style={{ width: "250px", backgroundColor: "#697CE8" }}
+      style={{ 
+        minWidth: "202px", 
+        maxWidth: "224px", 
+        width: "18vw", 
+        backgroundColor: "#697CE8" 
+      }}
     >
-      <div className="text-center mb-4">
+      <div className="text-center mb-3">
         <img
           src={logo}
           alt="HRMS Logo"
-          className="mb-3"
-          style={{ width: "200px" }}
+          className="mb-2"
+          style={{ 
+            width: "100%", 
+            maxWidth: "157px",
+            height: "auto" 
+          }}
         />
         <br />
         <div className="d-flex align-items-center">
           <img
             src={profile}
             alt="Profile"
-            className="rounded-circle me-3"
-            style={{ width: "60px", height: "60px", objectFit: "cover" }}
+            className="rounded-circle me-2"
+            style={{ 
+              width: "45px", 
+              height: "45px", 
+              objectFit: "cover",
+              minWidth: "45px"
+            }}
           />
           <div>
-            <h6 className="fw-bold mb-1">Maria</h6>
-            <small>HR Manager</small>
+            <h6 className="fw-bold mb-1" style={{ fontSize: "0.9rem" }}>Maria</h6>
+            <small style={{ fontSize: "0.73rem" }}>HR Manager</small>
           </div>
         </div>
       </div>
 
-      <div className="nav-links mt-3">
+      <div className="nav-links mt-2 flex-grow-1">
         {items.map((item) => (
           <NavLink
             to={item.path}
             key={item.name}
             className={({ isActive }) =>
-              `py-2 px-3 rounded d-flex align-items-center text-decoration-none ${
+              `py-2 px-2 rounded d-flex align-items-center text-decoration-none ${
                 isActive ? "bg-light text-dark fw-bold" : "text-white"
               }`
             }
-            style={{ marginBottom: "30px" }}
+            style={{ 
+              marginBottom: "14px",
+              fontSize: "0.9rem",
+              whiteSpace: "nowrap"
+            }}
           >
-            <i className={`bi ${item.icon} me-2`}></i>
-            {item.name}
+            <i className={`bi ${item.icon} me-2`} style={{ minWidth: "17px", fontSize: "0.98rem" }}></i>
+            <span className="nav-text">{item.name}</span>
           </NavLink>
         ))}
       </div>
