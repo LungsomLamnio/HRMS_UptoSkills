@@ -4,7 +4,7 @@ import profile from "../assets/Photo.jpg";
 import logo from "../assets/HRMS_Logo.png";
 
 const items = [
-  { name: "Dashboard", icon: "bi-speedometer2", path: "/" },
+  { name: "Dashboard", icon: "bi-grid", path: "/" },
   { name: "Chat", icon: "bi-chat-dots", path: "/chat" },
   { name: "Employees", icon: "bi-people", path: "/employees" },
   { name: "Feed", icon: "bi-newspaper", path: "/feed" },
