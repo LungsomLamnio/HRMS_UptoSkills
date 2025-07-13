@@ -4,8 +4,10 @@ import "react-calendar/dist/Calendar.css";
 import './Events.css';
 import profile1 from "../assets/client.jpg";
 import profile2 from "../assets/EventO.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function Event1 () {
+  const navigate = useNavigate();
 
   const events = [
     {
@@ -99,6 +101,7 @@ export default function Event1 () {
           <div className="text-center mt-4">
             <button
               className="btn btn-primary px-4 py-2 fw-bold"
+              onClick={() => navigate("/event/schedule")}
             >
               Schedule New Event
             </button>
