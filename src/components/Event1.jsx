@@ -4,6 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import './Events.css';
 import profile1 from "../assets/client.jpg";
 import profile2 from "../assets/EventO.png";
+import { FaClock, FaCalendarAlt, FaVideo, FaGlobe } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
 export default function Event1 () {
@@ -53,10 +54,10 @@ export default function Event1 () {
                   </div>
                 </div>
                 <ul className="list-unstyled small text-muted mb-3">
-                  <li>🕒 30 min</li>
-                  <li className="my-2">📄 Web conferencing details provided upon confirmation.</li>
-                  <li>📅 19:00 - 19:45, Monday, August 19, 2024</li>
-                  <li>🌍 Asia/Kolkata</li>
+                  <li><FaClock /> 30 min</li>
+                  <li className="my-2"><FaCalendarAlt /> Web conferencing details provided upon confirmation.</li>
+                  <li><FaVideo /> 19:00 - 19:45, Monday, August 19, 2024</li>
+                  <li><FaGlobe /> Asia/Kolkata</li>
                 </ul>
                 <div className="d-flex justify-content-center">
                   <button className="btn btn-primary px-4">Join Event</button>
