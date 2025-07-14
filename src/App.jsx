@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/SideBar";
 import "/src/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Event2 from "./components/Event2";
+import Event2 from "./components/Events2";
 import Event1 from "./components/Event1";
 import Event3 from "./components/Event3";
 
