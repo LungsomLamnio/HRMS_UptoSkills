@@ -44,7 +44,7 @@ export default function Event1 () {
                     src={event.image}
                     alt="avatar"
                     className="me-3"
-                    style={{ width: 50, height: 50, borderRadius: "50%" }}
+                    style={{ width: 50, height: 50, borderRadius: "50%", objectFit: "cover" }}
                   />
                   <div>
                     <p className="mb-0 text-muted" style={{ fontSize: "14px" }}>
