@@ -2,8 +2,12 @@ import React from "react";
 import { FaClock, FaCalendarAlt, FaVideo, FaGlobe } from "react-icons/fa";
 import eventImg from "../assets/EventO.png"; 
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 
-const Events = () => {
+const Events2 = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="container my-4">
       <div className="row g-4">
@@ -69,7 +73,9 @@ const Events = () => {
                 <input type="email" className="form-control" placeholder="you@example.com" />
               </div>
 
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <button type="submit" className="btn btn-primary"
+                onClick={() => navigate("/event/confirmation")}
+              >Submit</button>
 
               <p className="mt-3 small text-muted">
                 By proceeding, you confirm that you have read and agree to
@@ -84,4 +90,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default Events2;
