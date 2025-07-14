@@ -1,14 +1,14 @@
 import React from 'react';
-import userImg from '../assets/client.jpg';
+import profile from '../assets/client.jpg'
 import '../App.css'; 
 
-function EventPage() {
+function Event3() {
   return (
     <div className="main-content">
       <div className="event-wrapper">
         <div className="event-header">
           <img
-            src={userImg}
+            src= {profile}
             alt="User"
             className="event-profile"
           />
@@ -28,4 +28,4 @@ function EventPage() {
   );
 }
 
-export default EventPage;
+export default Event3;
