@@ -23,6 +23,7 @@ const navItems = [
   { name: "Event", icon: <FaCalendarAlt />, path: "/event" },
   { name: "Profile", icon: <FaUser />, path: "/profile" },
   { name: "Settings", icon: <FaCog />, path: "/settings" },
+];
 
 const Sidebar = () => {
   const navigate = useNavigate();
