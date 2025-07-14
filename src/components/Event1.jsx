@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import './Events.css';
@@ -7,7 +7,7 @@ import profile2 from "../assets/EventO.png";
 import { FaClock, FaCalendarAlt, FaVideo, FaGlobe } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
-export default function Event1 () {
+export default function Event1() {
   const navigate = useNavigate();
 
   const events = [
@@ -32,7 +32,7 @@ export default function Event1 () {
 
   return (
     <div className="container py-4">
-      <h3 className="fw-bold mb-4">Event Listes -</h3>
+      <h3 className="fw-bold mb-4">Event List</h3>
       <div className="row">
         {/* LEFT SIDE */}
         <div className="col-md-5 mx-auto">
@@ -42,9 +42,14 @@ export default function Event1 () {
                 <div className="d-flex align-items-center mb-3">
                   <img
                     src={event.image}
-                    alt="avatar"
+                    alt={event.name}
                     className="me-3"
-                    style={{ width: 50, height: 50, borderRadius: "50%" }}
+                    style={{
+                      width: 50,
+                      height: 50,
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                    }}
                   />
                   <div>
                     <p className="mb-0 text-muted" style={{ fontSize: "14px" }}>
@@ -54,10 +59,16 @@ export default function Event1 () {
                   </div>
                 </div>
                 <ul className="list-unstyled small text-muted mb-3">
-                  <li><FaClock /> 30 min</li>
-                  <li className="my-2"><FaCalendarAlt /> Web conferencing details provided upon confirmation.</li>
-                  <li><FaVideo /> 19:00 - 19:45, Monday, August 19, 2024</li>
-                  <li><FaGlobe /> Asia/Kolkata</li>
+                  <li><FaClock className="me-2" />30 min</li>
+                  <li className="my-2">
+                    <FaCalendarAlt className="me-2" />
+                    Web conferencing details provided upon confirmation.
+                  </li>
+                  <li>
+                    <FaVideo className="me-2" />
+                    19:00 - 19:45, Monday, August 19, 2024
+                  </li>
+                  <li><FaGlobe className="me-2" />Asia/Kolkata</li>
                 </ul>
                 <div className="d-flex justify-content-center">
                   <button className="btn btn-primary px-4">Join Event</button>
