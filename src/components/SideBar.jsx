@@ -25,7 +25,7 @@ const navItems = [
   { name: "Settings", icon: <FaCog />, path: "/settings" },
 ];
 
-const Sidebar = () => {
+const SideBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -62,4 +62,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
