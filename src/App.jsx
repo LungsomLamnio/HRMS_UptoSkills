@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/SideBar";
-import Events from "./components/Events";
+import Events from "./components/Event3";
 import "/src/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
