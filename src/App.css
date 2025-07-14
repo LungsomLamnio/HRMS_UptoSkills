@@ -23,7 +23,7 @@ body {
 
 /* === Sidebar === */
 .sidebar {
-  width: 220px;
+  width: 250px;
   background-color: #8481e2;
   color: white;
   height: 100vh;
@@ -81,9 +81,10 @@ body {
   gap: 1rem;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   transition: background-color 0.2s ease;
   color: white;
+  margin-bottom: 8px;
 }
 
 .nav-item .icon svg {
@@ -112,16 +113,7 @@ body {
 }
 
 /* === Event Page New Styling === */
-.main-content{
-  flex: 1;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 270%;
-  height: 100vh;
-}
+
 .event-wrapper {
   width: 100%;
   max-width: 700px;
@@ -130,6 +122,18 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .event-header {

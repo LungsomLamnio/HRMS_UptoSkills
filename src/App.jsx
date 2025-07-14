@@ -6,9 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="d-flex">
+    <div className="d-flex" style={{ height: "100vh", width: "100vw" }}>
       <Sidebar />
-      <div className="flex-grow-1 p-4">
+      
+      <div className="main-content">
         <Routes>
           <Route path="/event" element={<Events />} />
         </Routes>
