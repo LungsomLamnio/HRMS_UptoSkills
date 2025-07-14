@@ -1,4 +1,5 @@
 import React from 'react';
+import userImg from '../assets/client.jpg';
 import '../App.css'; 
 
 function EventPage() {
@@ -7,7 +8,7 @@ function EventPage() {
       <div className="event-wrapper">
         <div className="event-header">
           <img
-            src="client.jpg"
+            src={userImg}
             alt="User"
             className="event-profile"
           />
