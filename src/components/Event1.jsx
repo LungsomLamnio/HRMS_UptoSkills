@@ -44,7 +44,7 @@ export default function Event1() {
 
   return (
     <div className="container py-4">
-      <h3 className="fw-bold mb-4">Event Listes -</h3>
+      <h3 className="fw-bold mb-4">Event List</h3>
       <div className="row">
         {/* LEFT SIDE */}
         <div className="col-md-5 mx-auto">
@@ -54,9 +54,14 @@ export default function Event1() {
                 <div className="d-flex align-items-center mb-3">
                   <img
                     src={event.image}
-                    alt="avatar"
+                    alt={event.name}
                     className="me-3"
-                    style={{ width: 50, height: 50, borderRadius: "50%" }}
+                    style={{
+                      width: 50,
+                      height: 50,
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                    }}
                   />
                   <div>
                     <p className="mb-0 text-muted" style={{ fontSize: "14px" }}>
