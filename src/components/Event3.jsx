@@ -1,3 +1,4 @@
+/* Event 3rd page */
 import React from 'react';
 import profile from '../assets/client.jpg'
 import '../App.css'; 
