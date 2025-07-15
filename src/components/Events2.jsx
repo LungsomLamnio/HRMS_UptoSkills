@@ -47,28 +47,6 @@ const Events2 = () => {
     });
   };
 
-  // States for form inputs
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [eventTitle, setEventTitle] = useState("");
-  const [conferenceDetails, setConferenceDetails] = useState("");
-  const [duration, setDuration] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Log or store form data here
-    console.log({
-      name,
-      email,
-      eventTitle,
-      conferenceDetails,
-      duration,
-    });
-
-    navigate("/event/confirmation");
-  };
-
   return (
     <div className="container my-4">
       <div className="row g-4">

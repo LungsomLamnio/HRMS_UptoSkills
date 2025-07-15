@@ -135,7 +135,6 @@ export default function Event1() {
                     onClick={() => setSelectedTime(time)}
                     className={`btn fw-semibold ${selectedTime === time ? "btn-primary" : "btn-outline-primary"}`}
                     style={{ borderRadius: "8px", borderWidth: "2px" }}
-                    onClick={() => setSelectedTime(time)}
                   >
                     {time}
                   </button>
