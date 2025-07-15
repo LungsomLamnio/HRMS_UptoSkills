@@ -1,11 +1,51 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FaClock, FaCalendarAlt, FaVideo, FaGlobe } from "react-icons/fa";
 import eventImg from "../assets/EventO.png";
 import "../App.css";
-import { useNavigate } from "react-router-dom";
 
 const Events2 = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Received from Event1 via navigate state
+  const { date, time, timezone } = location.state || {};
+
+  // States for form inputs
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [eventTitle, setEventTitle] = useState("");
+  const [conferenceDetails, setConferenceDetails] = useState("");
+  const [duration, setDuration] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // You can send this to a server or store it
+    console.log({
+      name,
+      email,
+      eventTitle,
+      conferenceDetails,
+      duration,
+      date,
+      time,
+      timezone,
+    });
+
+    navigate("/event/confirmation", {
+      state: {
+        name,
+        email,
+        eventTitle,
+        conferenceDetails,
+        duration,
+        date,
+        time,
+        timezone,
+      },
+    });
+  };
 
   // States for form inputs
   const [name, setName] = useState("");
@@ -58,7 +98,7 @@ const Events2 = () => {
             <div className="d-flex align-items-center gap-2 mb-2">
               <FaClock />
               <span className="text-muted fst-italic small">
-                19:00 - 19:45, Monday, August 19, 2024
+                {time || "Time not selected"} - {date || "Date not selected"}
               </span>
             </div>
 
@@ -72,13 +112,16 @@ const Events2 = () => {
             <div className="d-flex align-items-center gap-2 mb-2">
               <FaVideo />
               <span className="text-muted fst-italic small">
-                {conferenceDetails || "Web conferencing details provided upon confirmation."}
+                {conferenceDetails ||
+                  "Web conferencing details provided upon confirmation."}
               </span>
             </div>
 
             <div className="d-flex align-items-center gap-2">
               <FaGlobe />
-              <span className="text-muted fst-italic small">Asia/Yerevan</span>
+              <span className="text-muted fst-italic small">
+                {timezone || "Time zone not selected"}
+              </span>
             </div>
           </div>
         </div>
@@ -86,7 +129,9 @@ const Events2 = () => {
         {/* Form Section */}
         <div className="col-md-6">
           <div className="card shadow-sm p-4">
-            <h2 className="fw-bold fs-5 text-primary mb-3">Fill Your Details here -</h2>
+            <h2 className="fw-bold fs-5 text-primary mb-3">
+              Fill Your Details here -
+            </h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label className="form-label">Event Title</label>
@@ -107,6 +152,7 @@ const Events2 = () => {
                   placeholder="Your name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  required
                 />
               </div>
 
@@ -118,6 +164,7 @@ const Events2 = () => {
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
 
@@ -149,8 +196,14 @@ const Events2 = () => {
 
               <p className="mt-3 small text-muted">
                 By proceeding, you confirm that you have read and agree to
-                <a href="#" className="text-decoration-none ms-1 text-primary">Calendly’s Terms of Use</a> and
-                <a href="#" className="text-decoration-none ms-1 text-primary">Privacy Notice</a>.
+                <a href="#" className="text-decoration-none ms-1 text-primary">
+                  Calendly’s Terms of Use
+                </a>{" "}
+                and
+                <a href="#" className="text-decoration-none ms-1 text-primary">
+                  Privacy Notice
+                </a>
+                .
               </p>
             </form>
           </div>
