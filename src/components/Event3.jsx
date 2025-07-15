@@ -1,14 +1,26 @@
 import React from 'react';
-import profile from '../assets/client.jpg'
+import { useLocation } from 'react-router-dom';
+import { FaClock, FaCalendarAlt, FaVideo, FaGlobe } from "react-icons/fa";
+import profile from '../assets/client.jpg';
 import '../App.css'; 
 
 function Event3() {
+  const location = useLocation();
+  const {
+    name,
+    eventTitle,
+    time,
+    date,
+    timezone,
+    conferenceDetails,
+  } = location.state || {};
+
   return (
     <div className="main-content">
       <div className="event-wrapper">
         <div className="event-header">
           <img
-            src= {profile}
+            src={profile}
             alt="User"
             className="event-profile"
           />
@@ -17,11 +29,11 @@ function Event3() {
         </div>
 
         <div className="event-card-box">
-          <h4 className="event-title">Schedule eClosing</h4>
-          <p><i className="bi bi-person-fill me-2"></i>Khatchadour Israelayn</p>
-          <p><i className="bi bi-calendar-event me-2"></i>19:00 - 19:45, Monday, August 19, 2024</p>
-          <p><i className="bi bi-globe me-2"></i>Asia/Yerevan</p>
-          <p><i className="bi bi-camera-video-fill me-2"></i>Web conferencing details to follow.</p>
+          <h4 className="event-title">{eventTitle || "Event Title"}</h4>
+          <p><i className="bi bi-person-fill me-2"></i>{name || "Participant Name"}</p>
+          <p><i><FaCalendarAlt /></i>{time} - {date}</p>
+          <p><i ><FaGlobe /></i> {timezone}</p>
+          <p><i><FaVideo /></i>{conferenceDetails}</p>
         </div>
       </div>
     </div>
