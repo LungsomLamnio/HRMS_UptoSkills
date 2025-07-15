@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaClock, FaCalendarAlt, FaVideo, FaGlobe } from "react-icons/fa";
-import eventImg from "../assets/EventO.png"; 
+import eventImg from "../assets/EventO.png";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 
 const Events2 = () => {
-
   const navigate = useNavigate();
+
+  // States for form inputs
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [eventTitle, setEventTitle] = useState("");
+  const [conferenceDetails, setConferenceDetails] = useState("");
+  const [duration, setDuration] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Log or store form data here
+    console.log({
+      name,
+      email,
+      eventTitle,
+      conferenceDetails,
+      duration,
+    });
+
+    navigate("/event/confirmation");
+  };
 
   return (
     <div className="container my-4">
@@ -28,7 +49,9 @@ const Events2 = () => {
               />
               <div>
                 <div className="fw-medium text-dark">Maria</div>
-                <h2 className="fw-bold fs-5 mb-0 text-primary">Event title</h2>
+                <h2 className="fw-bold fs-5 mb-0 text-primary">
+                  {eventTitle || "Event title"}
+                </h2>
               </div>
             </div>
 
@@ -41,13 +64,15 @@ const Events2 = () => {
 
             <div className="d-flex align-items-center gap-2 mb-2">
               <FaCalendarAlt />
-              <span className="text-muted fst-italic small">30 min</span>
+              <span className="text-muted fst-italic small">
+                {duration || "30 min"}
+              </span>
             </div>
 
             <div className="d-flex align-items-center gap-2 mb-2">
               <FaVideo />
               <span className="text-muted fst-italic small">
-                Web conferencing details provided upon confirmation.
+                {conferenceDetails || "Web conferencing details provided upon confirmation."}
               </span>
             </div>
 
@@ -62,20 +87,65 @@ const Events2 = () => {
         <div className="col-md-6">
           <div className="card shadow-sm p-4">
             <h2 className="fw-bold fs-5 text-primary mb-3">Fill Your Details here -</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label className="form-label">Event Title</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter event title"
+                  value={eventTitle}
+                  onChange={(e) => setEventTitle(e.target.value)}
+                />
+              </div>
+
               <div className="mb-3">
                 <label className="form-label">Name</label>
-                <input type="text" className="form-control" placeholder="Your name" />
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">Email</label>
-                <input type="email" className="form-control" placeholder="you@example.com" />
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="you@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
 
-              <button type="submit" className="btn btn-primary"
-                onClick={() => navigate("/event/confirmation")}
-              >Submit</button>
+              <div className="mb-3">
+                <label className="form-label">Duration</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="e.g. 30 min"
+                  value={duration}
+                  onChange={(e) => setDuration(e.target.value)}
+                />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Web Conferencing Details</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="e.g. Zoom or Google Meet link"
+                  value={conferenceDetails}
+                  onChange={(e) => setConferenceDetails(e.target.value)}
+                />
+              </div>
+
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
 
               <p className="mt-3 small text-muted">
                 By proceeding, you confirm that you have read and agree to
